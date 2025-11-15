@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veloce Dynamics | Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /*
+         * --- CSS STYLES ---
+         */
 
+        :root {
+            /* Veloce Dynamics Color Palette */
+            --primary-color: #FF4500; /* Bold Racing Orange/Red */
+            --secondary-color: #1A1A1A; /* Deep Racing Black */
+            --text-color: #E0E0E0; /* Light Silver/White Text */
+            --accent-color: #FFD700; /* Gold Accent for speed effect */
+            --bg-gradient: linear-gradient(135deg, var(--secondary-color) 0%, #000000 100%);
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Prevent scroll for full-page design */
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 800px;
+            border: 4px solid var(--primary-color);
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(255, 69, 0, 0.5); /* Glowing effect */
+            background-color: rgba(26, 26, 26, 0.85); /* Semi-transparent black overlay */
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Veloce Dynamics Logo/Team Name Styling */
+        .logo-name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 5px;
+            color: var(--text-color);
+            text-transform: uppercase;
+        }
+
+        .logo-name span {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            animation: pulse 2s infinite ease-in-out; /* Subtle pulsing animation */
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 15px;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        /* --- Animation: Subtle Pulsing for the "Coming Soon" text --- */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.02); opacity: 0.95; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /*
+         * --- Animation: Dynamic Racing Lines Background ---
+         * This creates an animated, moving background effect.
+         */
+        .racing-stripes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1; /* Keep it behind the main content */
+        }
+
+        .stripe {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            opacity: 0.1;
+            animation: moveStripes 30s linear infinite;
+        }
+
+        /* Random positioning for the stripes */
+        .stripe:nth-child(1) { top: 10%; animation-delay: 0s; }
+        .stripe:nth-child(2) { top: 30%; animation-delay: 5s; animation-duration: 25s; }
+        .stripe:nth-child(3) { top: 50%; animation-delay: 10s; animation-duration: 35s; }
+        .stripe:nth-child(4) { top: 70%; animation-delay: 15s; animation-duration: 28s; }
+        .stripe:nth-child(5) { top: 90%; animation-delay: 20s; animation-duration: 40s; }
+
+        /* Stripe Movement Animation */
+        @keyframes moveStripes {
+            0% { transform: translateX(-100%) rotate(5deg); }
+            100% { transform: translateX(100%) rotate(5deg); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="racing-stripes">
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+    </div>
+
+    <div class="container">
+        <div class="logo-name">
+            VELOCE <span>DYNAMICS</span>
+        </div>
+        <hr style="border: 1px solid var(--primary-color); width: 60%; margin: 20px auto;">
+        
+        <h1>COMING SOON</h1>
+        
+        <p>
+            Our pit crew is finalizing the setup. <br>
+            Get ready for the full-throttle launch of our new website!
+        </p>
+
+        <div style="margin-top: 30px; font-size: 0.9em;">
+            Follow us on social media for updates.
+        </div>
+    </div>
+    
+</body>
+</html>
