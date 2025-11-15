@@ -11,11 +11,11 @@
          */
 
         :root {
-            /* Veloce Dynamics Color Palette */
-            --primary-color: #FF4500; /* Bold Racing Orange/Red */
+            /* Veloce Dynamics Color Palette (Neon Blue Theme) */
+            --primary-color: #00FFFF; /* NEON LIGHT BLUE */
             --secondary-color: #1A1A1A; /* Deep Racing Black */
             --text-color: #E0E0E0; /* Light Silver/White Text */
-            --accent-color: #FFD700; /* Gold Accent for speed effect */
+            --accent-color: #00D7FF; /* Slightly darker neon blue accent */
             --bg-gradient: linear-gradient(135deg, var(--secondary-color) 0%, #000000 100%);
         }
 
@@ -28,8 +28,32 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            overflow: hidden; /* Prevent scroll for full-page design */
+            overflow: hidden; 
+            position: relative; /* Needed for absolute positioning of background elements */
         }
+
+        /* --- F1 Themed Background Animation --- */
+        .f1-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2JpZ2o2czN5ZHpvdXJzb3Q4NW10d29wazl6czlwMWhxdXQ2ZjlzNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kHHlR7o1iX7SgL5JmD/giphy.gif') no-repeat center center fixed; /* Placeholder GIF URL */
+            background-size: cover;
+            opacity: 0.2; /* Subtle transparency */
+            filter: blur(2px); /* Slightly blur the background to keep content readable */
+            animation: panBackground 60s linear infinite; /* Slow panning motion */
+            z-index: 0; /* Behind everything */
+        }
+
+        /* Panning animation for the F1 background */
+        @keyframes panBackground {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 0%; }
+        }
+
 
         .container {
             text-align: center;
@@ -37,8 +61,8 @@
             max-width: 800px;
             border: 4px solid var(--primary-color);
             border-radius: 8px;
-            box-shadow: 0 0 40px rgba(255, 69, 0, 0.5); /* Glowing effect */
-            background-color: rgba(26, 26, 26, 0.85); /* Semi-transparent black overlay */
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.3); 
+            background-color: rgba(26, 26, 26, 0.9); /* Slightly less transparent for better readability over busy background */
             position: relative;
             z-index: 10;
         }
@@ -63,7 +87,7 @@
             margin: 0;
             color: var(--primary-color);
             text-transform: uppercase;
-            animation: pulse 2s infinite ease-in-out; /* Subtle pulsing animation */
+            animation: pulse 2s infinite ease-in-out; 
         }
 
         p {
@@ -75,15 +99,12 @@
 
         /* --- Animation: Subtle Pulsing for the "Coming Soon" text --- */
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.02); opacity: 0.95; }
-            100% { transform: scale(1); opacity: 1; }
+            0% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
+            50% { transform: scale(1.02); opacity: 0.95; text-shadow: 0 0 10px var(--primary-color); }
+            100% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
         }
 
-        /*
-         * --- Animation: Dynamic Racing Lines Background ---
-         * This creates an animated, moving background effect.
-         */
+        /* --- Animation: Dynamic Racing Lines Background --- */
         .racing-stripes {
             position: absolute;
             top: 0;
@@ -91,34 +112,65 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: 1; /* Keep it behind the main content */
+            z-index: 1; /* Above F1 background, below content */
+            pointer-events: none; /* Allows clicks to pass through */
         }
 
         .stripe {
             position: absolute;
             width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
-            opacity: 0.1;
-            animation: moveStripes 30s linear infinite;
+            height: 3px; /* Slightly thicker stripes */
+            background: linear-gradient(to right, transparent, var(--primary-color), var(--accent-color), transparent); /* More vibrant gradient */
+            opacity: 0.25; /* Slightly more visible */
+            animation: moveStripes 25s linear infinite; /* Faster movement */
         }
 
         /* Random positioning for the stripes */
         .stripe:nth-child(1) { top: 10%; animation-delay: 0s; }
-        .stripe:nth-child(2) { top: 30%; animation-delay: 5s; animation-duration: 25s; }
-        .stripe:nth-child(3) { top: 50%; animation-delay: 10s; animation-duration: 35s; }
-        .stripe:nth-child(4) { top: 70%; animation-delay: 15s; animation-duration: 28s; }
-        .stripe:nth-child(5) { top: 90%; animation-delay: 20s; animation-duration: 40s; }
+        .stripe:nth-child(2) { top: 25%; animation-delay: 3s; animation-duration: 20s; }
+        .stripe:nth-child(3) { top: 40%; animation-delay: 8s; animation-duration: 30s; }
+        .stripe:nth-child(4) { top: 55%; animation-delay: 13s; animation-duration: 22s; }
+        .stripe:nth-child(5) { top: 70%; animation-delay: 18s; animation-duration: 35s; }
+        .stripe:nth-child(6) { top: 85%; animation-delay: 2s; animation-duration: 27s; } /* Added one more stripe */
 
-        /* Stripe Movement Animation */
+
+        /* Stripe Movement Animation (now with a slight diagonal shift) */
         @keyframes moveStripes {
-            0% { transform: translateX(-100%) rotate(5deg); }
-            100% { transform: translateX(100%) rotate(5deg); }
+            0% { transform: translateX(-100%) translateY(0%) rotate(5deg); }
+            100% { transform: translateX(100%) translateY(-5%) rotate(5deg); } /* Added slight Y shift */
+        }
+
+        /* Styling for the New Contact/School Section */
+        .contact-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--accent-color);
+            font-size: 1em;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--text-color);
+            text-shadow: 0 0 8px var(--primary-color); /* Neon hover effect */
+        }
+
+        .school-name {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: var(--text-color);
+            opacity: 0.6;
         }
 
     </style>
 </head>
 <body>
+    <div class="f1-background"></div>
 
     <div class="racing-stripes">
         <div class="stripe"></div>
@@ -126,7 +178,7 @@
         <div class="stripe"></div>
         <div class="stripe"></div>
         <div class="stripe"></div>
-    </div>
+        <div class="stripe"></div> </div>
 
     <div class="container">
         <div class="logo-name">
@@ -141,8 +193,20 @@
             Get ready for the full-throttle launch of our new website!
         </p>
 
-        <div style="margin-top: 30px; font-size: 0.9em;">
-            Follow us on social media for updates.
+        <div class="contact-info">
+            <p style="margin-top: 0; font-size: 1em; letter-spacing: normal;">Connect with us:</p>
+            
+            <a href="https://www.instagram.com/velocedynamics" target="_blank">
+                Instagram: @velocedynamics
+            </a>
+            
+            <a href="mailto:veloce.dynamics@smilinginternationalschool.eu">
+                Email: veloce.dynamics@smilinginternationalschool.eu
+            </a>
+        </div>
+        
+        <div class="school-name">
+            Smiling International School is School.
         </div>
     </div>
     
