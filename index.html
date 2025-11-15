@@ -16,7 +16,8 @@
             --secondary-color: #1A1A1A; /* Deep Racing Black */
             --text-color: #E0E0E0; /* Light Silver/White Text */
             --accent-color: #00D7FF; /* Slightly darker neon blue accent */
-            --bg-gradient: linear-gradient(135deg, var(--secondary-color) 0%, #000000 100%);
+            /* Simple, dark radial gradient for a clean look */
+            --bg-gradient: radial-gradient(circle at center, #101010 0%, #000000 100%);
         }
 
         body {
@@ -32,38 +33,17 @@
             position: relative; 
         }
 
-        /* --- F1 Themed Background Animation --- */
-        .f1-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Placeholder GIF URL - Replace with your chosen F1/Car GIF/Video */
-            background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2JpZ2o2czN5ZHpvdXJzb3Q4NW10d29wazl6czlwMWhxdXQ2ZjlzNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kHHlR7o1iX7SgL5JmD/giphy.gif') no-repeat center center fixed; 
-            background-size: cover;
-            opacity: 0.2; 
-            filter: blur(2px); 
-            animation: panBackground 60s linear infinite; 
-            z-index: 0; 
-        }
-
-        /* Panning animation for the F1 background */
-        @keyframes panBackground {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 0%; }
-        }
-
-
+        /* --- Main Content Container --- */
         .container {
             text-align: center;
             padding: 40px;
             max-width: 800px;
             border: 4px solid var(--primary-color);
             border-radius: 8px;
+            /* Neon Blue Glowing effect */
             box-shadow: 0 0 40px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.3); 
-            background-color: rgba(26, 26, 26, 0.9); 
+            /* Solid black background for maximum readability */
+            background-color: rgba(0, 0, 0, 0.95); 
             position: relative;
             z-index: 10;
         }
@@ -105,7 +85,7 @@
             100% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
         }
 
-        /* --- Animation: Dynamic Racing Lines Background --- */
+        /* --- Animation: Dynamic Racing Lines Background (Subtle) --- */
         .racing-stripes {
             position: absolute;
             top: 0;
@@ -120,10 +100,11 @@
         .stripe {
             position: absolute;
             width: 100%;
-            height: 3px; 
-            background: linear-gradient(to right, transparent, var(--primary-color), var(--accent-color), transparent); 
-            opacity: 0.25; 
-            animation: moveStripes 25s linear infinite; 
+            height: 2px; /* Thinner stripe */
+            /* Subtle neon blue gradient */
+            background: linear-gradient(to right, transparent 5%, var(--primary-color), transparent 95%); 
+            opacity: 0.08; /* Very subtle opacity */
+            animation: moveStripes 30s linear infinite; /* Slower movement */
         }
 
         /* Random positioning for the stripes */
@@ -134,7 +115,7 @@
         .stripe:nth-child(5) { top: 70%; animation-delay: 18s; animation-duration: 35s; }
         .stripe:nth-child(6) { top: 85%; animation-delay: 2s; animation-duration: 27s; } 
 
-        /* Stripe Movement Animation */
+        /* Stripe Movement Animation (Diagonal Shift) */
         @keyframes moveStripes {
             0% { transform: translateX(-100%) translateY(0%) rotate(5deg); }
             100% { transform: translateX(100%) translateY(-5%) rotate(5deg); } 
@@ -146,15 +127,16 @@
             padding-top: 20px;
             border-top: 1px solid var(--accent-color);
             font-size: 1em;
-            display: flex; /* Use flexbox to control layout */
-            flex-direction: column; /* Stack items vertically */
+            /* Stacks links vertically */
+            display: flex; 
+            flex-direction: column; 
             align-items: center;
         }
 
         .contact-info a {
             color: var(--primary-color);
             text-decoration: none;
-            margin: 5px 0; /* Add vertical margin for spacing */
+            margin: 5px 0; /* Ensures links are on separate lines with spacing */
             transition: color 0.3s, text-shadow 0.3s;
         }
 
@@ -169,13 +151,10 @@
             color: var(--text-color);
             opacity: 0.6;
         }
-
     </style>
 </head>
 <body>
     
-    <div class="f1-background"></div>
-
     <div class="racing-stripes">
         <div class="stripe"></div>
         <div class="stripe"></div>
