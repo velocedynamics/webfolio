@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veloce Dynamics | Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Audiowide&display=swap" rel="stylesheet">
     <style>
         /*
          * --- CSS STYLES ---
@@ -12,12 +12,16 @@
 
         :root {
             /* Veloce Dynamics Color Palette (Neon Blue Theme) */
-            --primary-color: #00FFFF; /* NEON LIGHT BLUE */
+            --primary-color: #00FFFF; /* NEON LIGHT BLUE for border, h1, links */
             --secondary-color: #1A1A1A; /* Deep Racing Black */
             --text-color: #E0E0E0; /* Light Silver/White Text */
             --accent-color: #00D7FF; /* Slightly darker neon blue accent */
             /* Simple, dark radial gradient for a clean look */
             --bg-gradient: radial-gradient(circle at center, #101010 0%, #000000 100%);
+
+            /* Logo Gradient Colors - directly from your provided image */
+            --logo-light-blue: #87CEEB; /* Sky Blue */
+            --logo-dark-blue: #4169E1; /* Royal Blue */
         }
 
         body {
@@ -48,92 +52,62 @@
             z-index: 10;
         }
 
-        /* --- CSS GEOMETRIC F1 CAR LOGO STYLING --- */
-        .f1-car-logo {
+        /* --- LOGO STYLING --- */
+        .logo-box {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
-            /* Applying neon glow to the entire logo structure */
-            color: var(--primary-color); 
-            filter: drop-shadow(0 0 5px var(--primary-color));
         }
 
-        /* The main body of the car */
-        .car-body {
-            width: 100px;
-            height: 30px;
-            background-color: var(--primary-color);
-            border-radius: 5px 5px 0 0; /* Rounded front */
-            position: relative;
+        .infinity-symbol {
+            width: 120px; /* Larger infinity symbol */
+            height: auto;
+            margin-bottom: 8px; 
         }
 
-        /* Front Wing */
-        .front-wing {
-            width: 120px;
-            height: 8px;
-            background-color: var(--primary-color);
-            margin-top: -8px; /* Lift wing slightly */
-            border-radius: 2px;
-        }
-
-        /* Rear Wing */
-        .rear-wing {
-            width: 80px;
-            height: 12px;
-            background-color: var(--primary-color);
-            border-radius: 0 0 5px 5px;
-            margin-top: 5px;
-        }
-        
-        /* Cockpit/Driver Headrest (uses a slightly darker color/shadow for depth) */
-        .cockpit {
-            width: 20px;
-            height: 15px;
-            background-color: var(--accent-color);
-            border-radius: 10px 10px 0 0;
-            position: absolute;
-            top: 5px; 
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
-        }
-
+        /* Styling for the Gradient Text "VELOCE DYNAMICS" - BIGGER FONT */
         .logo-text {
-            font-size: 2.2em;
-            font-weight: 700;
-            letter-spacing: 0.15em;
+            font-family: 'Audiowide', cursive; 
+            font-size: 3.5em; /* Significantly larger font size for the logo text */
+            font-weight: 400; /* Audiowide is naturally strong */
+            letter-spacing: 0.15em; 
             text-transform: uppercase;
-            color: var(--primary-color);
-            text-shadow: 0 0 5px var(--primary-color);
-            margin-top: 10px;
+            /* Apply a linear gradient to the text */
+            background: linear-gradient(to right, var(--logo-light-blue), var(--logo-dark-blue)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            color: transparent; /* Fallback */
+            text-shadow: 0 0 5px rgba(135, 206, 235, 0.5); /* Subtle glow effect */
+            margin-top: 5px; /* Adjust spacing between symbol and text */
         }
         /* --- END LOGO STYLING --- */
 
 
         h1 {
-            font-size: 4em;
+            font-size: 4em; /* This is already very large, keeping for "COMING SOON" */
             font-weight: 700;
             margin: 0;
             color: var(--primary-color);
             text-transform: uppercase;
             animation: pulse 2s infinite ease-in-out; 
         }
-        
-        /* ... rest of the CSS ... */
+
         p {
-            font-size: 1.2em;
+            font-size: 1.2em; /* Smaller than logo text */
             margin-top: 15px;
             letter-spacing: 2px;
             font-weight: 400;
         }
 
+        /* --- Animation: Subtle Pulsing for the "Coming Soon" text --- */
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
             50% { transform: scale(1.02); opacity: 0.95; text-shadow: 0 0 10px var(--primary-color); }
             100% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
         }
 
+        /* --- Animation: Dynamic Racing Lines Background (Subtle) --- */
         .racing-stripes {
             position: absolute;
             top: 0;
@@ -154,6 +128,7 @@
             animation: moveStripes 30s linear infinite; 
         }
 
+        /* Random positioning for the stripes */
         .stripe:nth-child(1) { top: 10%; animation-delay: 0s; }
         .stripe:nth-child(2) { top: 25%; animation-delay: 3s; animation-duration: 20s; }
         .stripe:nth-child(3) { top: 40%; animation-delay: 8s; animation-duration: 30s; }
@@ -161,16 +136,18 @@
         .stripe:nth-child(5) { top: 70%; animation-delay: 18s; animation-duration: 35s; }
         .stripe:nth-child(6) { top: 85%; animation-delay: 2s; animation-duration: 27s; } 
 
+        /* Stripe Movement Animation (Diagonal Shift) */
         @keyframes moveStripes {
             0% { transform: translateX(-100%) translateY(0%) rotate(5deg); }
             100% { transform: translateX(100%) translateY(-5%) rotate(5deg); } 
         }
 
+        /* Styling for the Contact/School Section */
         .contact-info {
             margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid var(--accent-color);
-            font-size: 1em;
+            font-size: 1em; /* Smaller than logo text */
             display: flex; 
             flex-direction: column; 
             align-items: center;
@@ -190,7 +167,7 @@
 
         .school-name {
             margin-top: 20px;
-            font-size: 0.8em;
+            font-size: 0.8em; /* Smaller than logo text */
             color: var(--text-color);
             opacity: 0.6;
         }
@@ -209,12 +186,17 @@
 
     <div class="container">
         
-        <div class="f1-car-logo">
-            <div class="front-wing"></div>
-            <div class="car-body">
-                <div class="cockpit"></div>
-            </div>
-            <div class="rear-wing"></div>
+        <div class="logo-box">
+            
+            <svg class="infinity-symbol" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:var(--logo-light-blue);stop-opacity:1" /> 
+                        <stop offset="100%" style="stop-color:var(--logo-dark-blue);stop-opacity:1" /> 
+                    </linearGradient>
+                </defs>
+                <path d="M190 50C190 27.9086 172.091 10 150 10C127.909 10 110 27.9086 110 50C110 72.0914 127.909 90 150 90C172.091 90 190 72.0914 190 50ZM50 50C50 27.9086 32.0914 10 10 10C-12.0914 10 -30 27.9086 -30 50C-30 72.0914 -12.0914 90 10 90C32.0914 90 50 72.0914 50 50ZM10 50C10 27.9086 27.9086 10 50 10C72.0914 10 90 27.9086 90 50C90 72.0914 72.0914 90 50 90C27.9086 90 10 72.0914 10 50ZM150 50C150 27.9086 127.909 10 105.996 10C83.9046 10 66 27.9086 66 50C66 72.0914 83.9046 90 105.996 90C127.909 90 150 72.0914 150 50Z" transform="translate(0 0)" stroke="url(#infinityGradient)" stroke-width="8"/>
+            </svg>
 
             <div class="logo-text">
                 VELOCE DYNAMICS
