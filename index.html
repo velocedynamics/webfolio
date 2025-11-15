@@ -1,232 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veloce Dynamics | Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Audiowide&display=swap" rel="stylesheet">
-    <style>
-        /*
-         * --- CSS STYLES ---
-         */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veloce Dynamics | Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        /*
+         * --- CSS STYLES ---
+         */
 
-        :root {
-            /* Veloce Dynamics Color Palette (Neon Blue Theme) */
-            --primary-color: #00FFFF; /* NEON LIGHT BLUE for border, h1, links */
-            --secondary-color: #1A1A1A; /* Deep Racing Black */
-            --text-color: #E0E0E0; /* Light Silver/White Text */
-            --accent-color: #00D7FF; /* Slightly darker neon blue accent */
-            /* Simple, dark radial gradient for a clean look */
-            --bg-gradient: radial-gradient(circle at center, #101010 0%, #000000 100%);
+        :root {
+            /* Veloce Dynamics Color Palette (Neon Blue Theme) */
+            --primary-color: #00FFFF; /* NEON LIGHT BLUE for border, h1, links */
+            --secondary-color: #1A1A1A; /* Deep Racing Black */
+            --text-color: #E0E0E0; /* Light Silver/White Text */
+            --accent-color: #00D7FF; /* Slightly darker neon blue accent */
+            /* Simple, dark radial gradient for a clean look */
+            --bg-gradient: radial-gradient(circle at center, #101010 0%, #000000 100%);
 
-            /* Logo Gradient Colors */
-            --logo-light-blue: #87CEEB; /* Sky Blue */
-            --logo-dark-blue: #4169E1; /* Royal Blue */
-        }
+            /* Logo Gradient Colors */
+            --logo-light-blue: #87CEEB; /* Sky Blue */
+            --logo-dark-blue: #4169E1; /* Royal Blue */
+        }
 
-        body {
-            font-family: 'Roboto Mono', monospace;
-            background: var(--bg-gradient);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden; 
-            position: relative; 
-        }
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden; 
+            position: relative; 
+        }
 
-        /* --- Main Content Container --- */
-        .container {
-            text-align: center;
-            padding: 40px;
-            max-width: 800px;
-            border: 4px solid var(--primary-color);
-            border-radius: 8px;
-            /* Neon Blue Glowing effect */
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.3); 
-            /* Solid black background for maximum readability */
-            background-color: rgba(0, 0, 0, 0.95); 
-            position: relative;
-            z-index: 10;
-        }
+        /* --- Main Content Container --- */
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 800px;
+            border: 4px solid var(--primary-color);
+            border-radius: 8px;
+            /* Neon Blue Glowing effect */
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.3); 
+            /* Solid black background for maximum readability */
+            background-color: rgba(0, 0, 0, 0.95); 
+            position: relative;
+            z-index: 10;
+        }
 
-        /* --- LOGO STYLING --- */
-        .logo-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+        /* --- LOGO STYLING --- */
+        .logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-        /* Styling for the Gradient Text "VELOCE DYNAMICS" - BIGGER FONT */
-        .logo-text {
-            font-family: 'Audiowide', cursive; 
-            font-size: 3.5em; /* Significantly larger font size for the logo text */
-            font-weight: 400; 
-            letter-spacing: 0.15em; 
-            text-transform: uppercase;
-            /* Apply a linear gradient to the text */
-            background: linear-gradient(to right, var(--logo-light-blue), var(--logo-dark-blue)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            color: transparent; /* Fallback */
-            text-shadow: 0 0 5px rgba(135, 206, 235, 0.5); /* Subtle glow effect */
-            margin-top: 0; /* No symbol, so reduce top margin */
-            margin-bottom: 5px; /* Add small margin below text */
-        }
-        /* --- END LOGO STYLING --- */
+        /* Styling for the Gradient Text "VELOCE DYNAMICS" - BIGGER FONT */
+        .logo-text {
+            font-family: 'Audiowide', cursive; 
+            font-size: 3.5em; 
+            font-weight: 400; 
+            letter-spacing: 0.15em; 
+            text-transform: uppercase;
+            /* Apply a linear gradient to the text */
+            background: linear-gradient(to right, var(--logo-light-blue), var(--logo-dark-blue)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            color: transparent; /* Fallback */
+            text-shadow: 0 0 5px rgba(135, 206, 235, 0.5); /* Subtle glow effect */
+            margin-top: 0; 
+            margin-bottom: 5px; 
+        }
+        /* --- END LOGO STYLING --- */
 
 
-        h1 {
-            font-size: 4em; 
-            font-weight: 700;
-            margin: 0;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            animation: pulse 2s infinite ease-in-out; 
-        }
+        h1 {
+            font-size: 4em; 
+            font-weight: 700;
+            margin: 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            animation: pulse 2s infinite ease-in-out; 
+        }
 
-        p {
-            font-size: 1.2em; 
-            margin-top: 15px;
-            letter-spacing: 2px;
-            font-weight: 400;
-        }
+        p {
+            font-size: 1.2em; 
+            margin-top: 15px;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
 
-        /* --- Animation: Subtle Pulsing for the "Coming Soon" text --- */
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
-            50% { transform: scale(1.02); opacity: 0.95; text-shadow: 0 0 10px var(--primary-color); }
-            100% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
-        }
+        /* --- Animation: Subtle Pulsing for the "Coming Soon" text --- */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
+            50% { transform: scale(1.02); opacity: 0.95; text-shadow: 0 0 10px var(--primary-color); }
+            100% { transform: scale(1); opacity: 1; text-shadow: 0 0 5px var(--primary-color); }
+        }
 
-        /* --- Animation: Dynamic Racing Lines Background (Subtle) --- */
-        .racing-stripes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1; 
-            pointer-events: none; 
-        }
+        /* --- Animation: Dynamic Racing Lines Background (Subtle) --- */
+        .racing-stripes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1; 
+            pointer-events: none; 
+        }
 
-        .stripe {
-            position: absolute;
-            width: 100%;
-            height: 2px; 
-            background: linear-gradient(to right, transparent 5%, var(--primary-color), transparent 95%); 
-            opacity: 0.08; 
-            animation: moveStripes 30s linear infinite; 
-        }
+        .stripe {
+            position: absolute;
+            width: 100%;
+            height: 2px; 
+            background: linear-gradient(to right, transparent 5%, var(--primary-color), transparent 95%); 
+            opacity: 0.08; 
+            animation: moveStripes 30s linear infinite; 
+        }
 
-        /* Random positioning for the stripes */
-        .stripe:nth-child(1) { top: 10%; animation-delay: 0s; }
-        .stripe:nth-child(2) { top: 25%; animation-delay: 3s; animation-duration: 20s; }
-        .stripe:nth-child(3) { top: 40%; animation-delay: 8s; animation-duration: 30s; }
-        .stripe:nth-child(4) { top: 55%; animation-delay: 13s; animation-duration: 22s; }
-        .stripe:nth-child(5) { top: 70%; animation-delay: 18s; animation-duration: 35s; }
-        .stripe:nth-child(6) { top: 85%; animation-delay: 2s; animation-duration: 27s; } 
+        /* Random positioning for the stripes */
+        .stripe:nth-child(1) { top: 10%; animation-delay: 0s; }
+        .stripe:nth-child(2) { top: 25%; animation-delay: 3s; animation-duration: 20s; }
+        .stripe:nth-child(3) { top: 40%; animation-delay: 8s; animation-duration: 30s; }
+        .stripe:nth-child(4) { top: 55%; animation-delay: 13s; animation-duration: 22s; }
+        .stripe:nth-child(5) { top: 70%; animation-delay: 18s; animation-duration: 35s; }
+        .stripe:nth-child(6) { top: 85%; animation-delay: 2s; animation-duration: 27s; } 
 
-        /* Stripe Movement Animation (Diagonal Shift) */
-        @keyframes moveStripes {
-            0% { transform: translateX(-100%) translateY(0%) rotate(5deg); }
-            100% { transform: translateX(100%) translateY(-5%) rotate(5deg); } 
-        }
+        /* Stripe Movement Animation (Diagonal Shift) */
+        @keyframes moveStripes {
+            0% { transform: translateX(-100%) translateY(0%) rotate(5deg); }
+            100% { transform: translateX(100%) translateY(-5%) rotate(5deg); } 
+        }
 
-        /* Styling for the Contact/School Section */
-        .contact-info {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--accent-color);
-            font-size: 1em; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center;
-        }
+        /* Styling for the Contact/School Section */
+        .contact-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--accent-color);
+            font-size: 1em; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+        }
 
-        .contact-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-            margin: 5px 0; 
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: var(--text-color);
-            text-shadow: 0 0 8px var(--primary-color); 
-        }
-
-        .school-name {
-            margin-top: 20px;
-            font-size: 0.8em; 
-            color: var(--text-color);
-            opacity: 0.6;
-        }
-        
-        /* NEW STYLES for the clickable school link */
-        .school-name a {
+        .contact-info a {
             color: var(--primary-color);
             text-decoration: none;
+            margin: 5px 0; 
             transition: color 0.3s, text-shadow 0.3s;
         }
 
-        .school-name a:hover {
+        .contact-info a:hover {
             color: var(--text-color);
-            text-shadow: 0 0 8px var(--primary-color);
+            text-shadow: 0 0 8px var(--primary-color); 
         }
 
-    </style>
+        /* School Name Link Styling */
+        .school-name {
+            margin-top: 20px;
+            font-size: 0.8em; 
+            opacity: 1; /* Ensure link is visible */
+        }
+
+        .school-name a {
+            color: var(--text-color); /* Initial text color */
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+            opacity: 0.6; /* Slight transparency for background context */
+        }
+        
+        .school-name a:hover {
+            color: var(--primary-color); /* Neon blue hover */
+            text-shadow: 0 0 5px var(--primary-color);
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    
-    <div class="racing-stripes">
-        <div class="stripe"></div>
-        <div class="stripe"></div>
-        <div class="stripe"></div>
-        <div class="stripe"></div>
-        <div class="stripe"></div>
-        <div class="stripe"></div>
-    </div>
+    
+    <div class="racing-stripes">
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+    </div>
 
-    <div class="container">
-        
-        <div class="logo-box">
-            
-            <div class="logo-text">
-                VELOCE DYNAMICS
-            </div>
-        </div>
-        <hr style="border: 1px solid var(--primary-color); width: 60%; margin: 20px auto;">
-        
-        <h1>COMING SOON</h1>
-        
-        <p>
-            Our pit crew is finalizing the setup. <br>
-            Get ready for the full-throttle launch of our new website!
-        </p>
+    <div class="container">
+        
+        <div class="logo-box">
+            
+            <div class="logo-text">
+                VELOCE DYNAMICS
+            </div>
+        </div>
+        <hr style="border: 1px solid var(--primary-color); width: 60%; margin: 20px auto;">
+        
+        <h1>COMING SOON</h1>
+        
+        <p>
+            Our pit crew is finalizing the setup. <br>
+            Get ready for the full-throttle launch of our new website!
+        </p>
 
-        <div class="contact-info">
-            <p style="margin-top: 0; font-size: 1em; letter-spacing: normal; margin-bottom: 10px;">Connect with us:</p>
-            
-            <a href="https://www.instagram.com/velocedynamics" target="_blank">
-                Instagram: @velocedynamics
-            </a>
-            
-            <a href="mailto:veloce.dynamics@smilinginternationalschool.eu">
-                Email: veloce.dynamics@smilinginternationalschool.eu
-            </a>
-        </div>
-        
-        <div class="school-name">
-                        <a href="https://www.smilinginternationalschool.eu" target="_blank">
-                www.smilinginternationalschool.eu
-            </a>
-                    </div>
-    </div>
-    
+        <div class="contact-info">
+            <p style="margin-top: 0; font-size: 1em; letter-spacing: normal; margin-bottom: 10px;">Connect with us:</p>
+            
+            <a href="https://www.instagram.com/velocedynamics" target="_blank">
+                Instagram: @velocedynamics
+            </a>
+            
+            <a href="mailto:veloce.dynamics@smilinginternationalschool.eu">
+                Email: veloce.dynamics@smilinginternationalschool.eu
+            </a>
+        </div>
+        
+        <div class="school-name">
+            <a href="http://www.smilinginternationalschool.eu" target="_blank">
+                Smiling International School is School.
+            </a>
+        </div>
+    </div>
+    
 </body>
 </html>
