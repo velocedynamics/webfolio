@@ -951,7 +951,42 @@
           <div class="car-tag">Race Car</div>
           <div class="car-name">Concept</div>
           <div class="car-image-placeholder">
-            <img src="image/Car prototype.jpg" alt="Car Prototype" />
+<style>
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 10px;
+    animation: scrollImages 25s linear infinite; /* 0.8 speed */
+  }
+
+  .carousel-track img {
+    width: 100%;
+    max-width: 400px; /* adjust image size */
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  @keyframes scrollImages {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-80%); } /* slow left scroll */
+  }
+</style>
+
+<div class="carousel-container">
+  <div class="carousel-track">
+    <img src="image/Car prototype.jpg" alt="Car Image 1" />
+    <img src="image/Car Prototype 2.jpg" alt="Car Image 2" />
+    <img src="image/Car Prototype 3.jpg" alt="Car Image 3" />
+    <img src="image/Veloce Dynamics Car.jpg" alt="Car Image 4" />
+  </div>
+</div>
+
           </div>
           <div class="car-stats">
             <div>
